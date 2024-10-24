@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from './entities/user.entity';
+import { IUser } from './interfaces/user.interface';
 
 @Controller('user')
 export class UserController {
@@ -14,7 +14,7 @@ export class UserController {
   }
 
   @Get('users')
-  findAll(): Promise<User[]> {
+  findAll(): Promise<IUser[]> {
     return this.userService.findAll();
   }
 

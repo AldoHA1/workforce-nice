@@ -16,6 +16,10 @@ import { UserModule } from './user/user.module';
       autoLoadEntities: true,
       synchronize: true,
       logging: true,
+      cache: {
+        type: 'database',
+        duration: 3600000,
+      },
     }),
 
     UserModule,
