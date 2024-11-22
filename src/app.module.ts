@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { UserModule } from './user/user.module';
+import { ClientModule } from './client/client.module';
 
 @Module({
   imports: [
@@ -21,7 +22,7 @@ import { UserModule } from './user/user.module';
         duration: 3600000,
       },
     }),
-
+    ClientModule,
     UserModule,
   ],
 })

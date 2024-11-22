@@ -1,7 +1,9 @@
+import { Client } from 'src/client/entities/client.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -34,4 +36,7 @@ export class User {
 
   @UpdateDateColumn()
   update_at: Date;
+
+  @ManyToMany(() => Client, (client) => client.users, { cascade: true })
+  clients: Client[];
 }
